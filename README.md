@@ -11,6 +11,20 @@ checkout our [JSONApi Server](https://github.com/becauseinterwebs/json-api-serve
 
     npm install git@github.com:becauseinterwebs/jsonapi-sequelize-query.git
 
+## Usage
+
+    const SequelizeJsonApiQuery = require('sequelize-jsonapi-query');
+
+    let api = new SequelizeJsonApiQuery({ resources : (array of Sequelize table objects) });
+
+    let query = api.parse(req, *root resource name*);
+
+    // You will then have a JSON object that can be passed to your Sequelize model 
+    // for querying:
+
+    myModel.findAll(query).then(results => ...
+
+   
 ## Dot Notation
 This library supports dot notation for filtering and including objects as well as for specifying the fields to be returned. For example:
 
@@ -86,7 +100,7 @@ You can also specify the fields you want returned from a resource by using the *
 
     http://someurl.com?users[fields]=id,name,address
 
-This return all of the resources from a table named *users* with only the id, name and address fields.
+This returns all of the resources from a table named *users* with only the id, name and address fields.
 
 ## Filtering on Related Objects
 You can also use the filters on related objects.  For example, if we have a **users** table that has related **address** objects, and those **address** objects 
