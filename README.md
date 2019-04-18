@@ -9,12 +9,12 @@ checkout our [JSONApi Server](https://github.com/becauseinterwebs/json-api-serve
 
 ## Installing
 
-    ```npm install git@github.com:becauseinterwebs/jsonapi-sequelize-query.git```
+    npm install git@github.com:becauseinterwebs/jsonapi-sequelize-query.git
 
 ## Dot Notation
 This library supports dot notation for filtering and including objects as well as for specifying the fields to be returned. For example:
 
-    ```http://someurl.com/resource?filter[resource.name][eq]=Test&include=resource2,resource2.resource3&fields[resource2]=id,name```
+    http://someurl.com/resource?filter[resource.name][eq]=Test&include=resource2,resource2.resource3&fields[resource2]=id,name
 
 In the above example, the main resource object (represented here by **resource**) is filtering on the name and including a related object, **resource2**.
 It is ALSO including a related object of **resource2** named **resource3** using dot notation.  Finally, only the fields **id** and **name** should be returned 
@@ -23,7 +23,7 @@ for the **resource2** object while all fields for the main **resource** object w
 ## Including Related Resources
 You can include related resources by using the **include** keyword. For example:
 
-    ```http://someurl.com/resource?include=resource2```
+    http://someurl.com/resource?include=resource2
 
 ### Required and Optional Related Object
 By default, the **include** parameter means the object should be required, which means that any resource objects that do NOT have that related object will not be returned.
@@ -31,13 +31,13 @@ By default, the **include** parameter means the object should be required, which
 If you want the main resource returned regardless of whether the related resource exists or not, you can add an **asterisk** to the related object to denote that is not required 
 but should be returned if it exists:
 
-    ```http://someurl.com/resource?include=*resource2```
+    http://someurl.com/resource?include=*resource2
 
 ## Filtering
 The [JSONApi](http://jsonapi.org) does not (at the time of this writing) have a formalized specification for implementing filters other than using the keyword 
 **filter**, so a commonly used format has been adopted for this implementation. For example:
 
-    ```https://someurl.com/resource?filter[resource.name][eq]=Test```
+    https://someurl.com/resource?filter[resource.name][eq]=Test
 
 will tell the engine to return a formatted query object that will tell the Sequelize ORM to only resources that have a name column equaling 'Test' will be returned.
 
