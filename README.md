@@ -24,7 +24,7 @@ checkout our [JSONApi Server](https://github.com/becauseinterwebs/json-api-serve
 
     myModel.findAll(query).then(results => ...
 
-For example, if the main resource is **users**, a query may look like:
+For example, if the main resource is **user**, a query may look like:
 
     http://someurl.com/user?include=address&filter[user.firstName][like]=Tom
 
@@ -36,7 +36,7 @@ Our code would look like:
 
     let query = api.parse(req, 'user');
 
-    users.findAll(query).then(results => ...
+    user.findAll(query).then(results => ...
 
 ## Dot Notation
 This library supports dot notation for filtering and including objects as well as for specifying the fields to be returned. For example:
