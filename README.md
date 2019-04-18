@@ -51,7 +51,7 @@ The following filter operators can be used:
 | Operator | Description | Example |
 | --- | --- | --- |
 | and | Match multiple filters | filter[resource.field][and]=1,2,3 |
-| or | Match either of the filters | filter[resource.field][or]=1,2,3 |
+| or | Match any or all of the filters | filter[resource.field][or]=1,2,3 |
 | eq | Match exactly | filter[resource.field][eq]=Test |
 | ne | Does not equal (exact match) | filter[resource.field][ne]=Test |
 | in | Matches one of the filters provided in a list | filter[resource.field][in]=red,blue,green |
@@ -81,5 +81,23 @@ The following operator shortcuts can also be used:
 | / | startsWith | filter[resource.field]=/*value*
 | \ | endsWith | filter[resource.field]=\\*value*
 
+## Specifying Resource Fields
+You can also specify the fields you want returned from a resource by using the **fields** keyword and a comma-delimited list of field names:
 
+    http://someurl.com?users[fields]=id,name,address
 
+This return all of the resources from a table named *users* with only the id, name and address fields.
+
+## Filtering on Related Objects
+You can also use the filters on related objects.  For example, if we have a **users** table that has related **address** objects, and those **address** objects 
+have related **phonenumber** objects:
+
+    http://someurl.com/users?include[address]&filter[address.city][eq]=Dallas
+
+Nested related objects can also be filtered (*like* is used here so that the match is case-insensitive):
+
+    http://someurl.com/users?include=address,address.phonenumber&filter[address.city][like]=Dallas&filter[address.phonenumber.phone][startsWith]=972
+
+Or using filter shortcuts:
+
+    http://someurl.com/users?include=address,address.phonenumber&filter[address.city]=~Dallas&filter[address.phonenumber.phone]=/972
