@@ -47,7 +47,8 @@ will tell the engine to return a formatted query object that will tell the Seque
 
 ### Filtering Operators
 The following filter operators can be used:
-| Operator | Description  | Example
+
+| Operator | Description  | Example |
 | --- | --- | --- |
 | and | Match multiple filters| filter[resource.field][and]=1,2,3 |
 | or | Match either of the filters | filter[resource.field][or]=1,2,3 |
@@ -69,6 +70,7 @@ The following filter operators can be used:
 
 ### Operator Shortcuts
 The following operator shortcuts can also be used:
+
 | Shortcut | Equivalent  | Example |
 | --- | --- | --- |
 | < | lt | filter[resource.field]=<*value*
