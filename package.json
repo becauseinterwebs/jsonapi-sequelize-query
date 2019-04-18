@@ -1,0 +1,24 @@
+{
+  "name": "sequelize-jsonapi-query",
+  "version": "1.0.3",
+  "description": "Library to parse JSONApi queries to sequelize query objects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@bitbucket.jwtreporting.com:7999/mt/sequelize-jsonapi-query.git"
+  },
+  "keywords": [
+    "sequelize",
+    "jsonapi",
+    "query",
+    "filter"
+  ],
+  "author": "B.Williams",
+  "license": "ISC",
+  "dependencies": {
+    "sequelize": "^4.38.1"
+  }
+}
