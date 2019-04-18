@@ -25,7 +25,11 @@ You can include related resources by using the **include** keyword. For example:
 
     http://someurl.com/resource?include=resource2
 
-### Required and Optional Related Object
+To include multiple related resources, use a comma-delimited list
+
+    http://someurl.com/resource?include=resource2,resource3,resource4
+
+### Required and Optional Related Objects
 By default, the **include** parameter means the object should be required, which means that any resource objects that do NOT have that related object will not be returned.
 
 If you want the main resource returned regardless of whether the related resource exists or not, you can add an **asterisk** to the related object to denote that is not required 
@@ -34,17 +38,17 @@ but should be returned if it exists:
     http://someurl.com/resource?include=*resource2
 
 ## Filtering
-The [JSONApi](http://jsonapi.org) does not (at the time of this writing) have a formalized specification for implementing filters other than using the keyword 
+The [JSONApi](http://jsonapi.org) v1 specification does not (at the time of this writing) have a formalized specification for implementing filters other than using the keyword 
 **filter**, so a commonly used format has been adopted for this implementation. For example:
 
     https://someurl.com/resource?filter[resource.name][eq]=Test
 
-will tell the engine to return a formatted query object that will tell the Sequelize ORM to only resources that have a name column equaling 'Test' will be returned.
+will tell the engine to return a formatted query object that will tell the Sequelize ORM to only return resources that have a name column equaling 'Test' will be returned.
 
 ### Filtering Operators
 The following filter operators can be used:
 | Operator | Description  | Example
-|--|--|--|
+| -- | -- | -- |
 | and | Match multiple filters| filter[resource.field][and]=1,2,3 |
 | or | Match either of the filters | filter[resource.field][or]=1,2,3 |
 | eq | Match exactly | filter[resource.field][eq]=Test |
