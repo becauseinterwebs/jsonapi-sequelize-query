@@ -1,6 +1,5 @@
-
 # JSONApi-Sequelize-Query
-This library makes it easy to implement [JSONApi](https://jsonapi.org) formatted queries by converting them to [Sequelize ORM](https://doc.sequelize.js.com) formatted query objects.
+This library makes it easy to parse [JSONApi](https://jsonapi.org) formatted requests and convert them to [Sequelize ORM](https://doc.sequelize.js.com) JSON formatted query objects.
 
 Many of the concepts regarding the JSONApi specification and JSONApi-formatted queries can be found on the [JSONApi website](https://jsonapi.org).
 
@@ -12,6 +11,8 @@ checkout our [JSONApi Server](https://github.com/becauseinterwebs/json-api-serve
     npm install git@github.com:becauseinterwebs/jsonapi-sequelize-query.git
 
 ## Usage
+
+In order to initialize the object, you will need to pass in an array of Sequelize table objects.  
 
     const SequelizeJsonApiQuery = require('sequelize-jsonapi-query');
 

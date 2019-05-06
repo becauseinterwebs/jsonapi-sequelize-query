@@ -640,6 +640,42 @@ class SequelizeJsonApiQuery {
     
   }
   
+  /**
+   * Remaps AWS Lambda event data
+   * @param {type} event
+   * @param {type} resource
+   * @returns {nm$_index.SequelizeJsonApiQuery._query}
+   */
+  parseAWS(event, resource) {
+
+    let req = {
+      query : {}
+    };
+    
+    if (!!event.queryStringParameters) {
+      Object.keys(event.queryStringParameters).map(key => {
+        if (key.indexOf('fields') === 0) {
+          let r = key.substring(7, key.length-1);
+          if (!req.query.fields) {
+            req.query.fields = {};
+          }
+          req.query.fields[r] = event.queryStringParameters[key]
+        } else if (key.indexOf('filter') === 0) {
+          let r = key.substring(7, key.length-1);
+          if (!req.query.filter) {
+            req.query.filter = {};
+          }
+          req.query.filter[r] = event.queryStringParameters[key]
+        } else {  
+          req.query[key] = event.queryStringParameters[key]
+        }
+      });
+    }
+    
+    return this.parse(req, resource);
+    
+  }
+  
 }
 
 module.exports = SequelizeJsonApiQuery;
