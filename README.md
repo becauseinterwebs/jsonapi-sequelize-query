@@ -8,7 +8,7 @@ checkout our [JSONApi Server](https://github.com/becauseinterwebs/json-api-serve
 
 ## Installing
 
-    npm install git@github.com:becauseinterwebs/jsonapi-sequelize-query.git
+    npm install git+ssh://git@github.com/becauseinterwebs/jsonapi-sequelize-query.git
 
 ## Usage
 
