@@ -1,7 +1,7 @@
 /*
  * sequelize-jsonapi-query
  * Version: 1.0.0
- * Author: Brent Williams <brent.williams@mirumagency.com>
+ * Author: Brent Williams <brent@becauseinterwebs.com>
  * 
  * Library to parse URL query strings into JSON query objects 
  * for Sequelize ORM
