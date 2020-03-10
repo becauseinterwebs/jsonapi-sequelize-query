@@ -19,6 +19,6 @@
   "author": "B.Williams",
   "license": "ISC",
   "dependencies": {
-    "sequelize": "^4.38.1"
+    "sequelize": "^4.44.4"
   }
 }
