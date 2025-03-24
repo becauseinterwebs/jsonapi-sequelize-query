@@ -1,9 +1,9 @@
 # JSONApi-Sequelize-Query
-This library makes it easy to parse [JSONApi](https://jsonapi.org) formatted requests and convert them to [Sequelize ORM](https://doc.sequelize.js.com) JSON formatted query objects.
+This library makes it easy to parse [JSONApi](https://jsonapi.org) formatted requests and convert them to [Sequelize ORM](https://sequelize.org/) JSON formatted query objects.
 
 Many of the concepts regarding the JSONApi specification and JSONApi-formatted queries can be found on the [JSONApi website](https://jsonapi.org).
 
-If you are wanting a fully-functioning JSONApi server that will automatically create CRUD endpoints for you and that works with [Sequelize ORM](https://doc.sequelize.js.com), 
+If you are wanting a fully-functioning JSONApi server that will automatically create CRUD endpoints for you and that works with [Sequelize ORM](https://sequelize.org/), 
 checkout our [JSONApi Server](https://github.com/becauseinterwebs/json-api-server).
 
 ## Installing
